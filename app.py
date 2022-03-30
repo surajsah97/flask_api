@@ -41,7 +41,7 @@ def login():
     elif request.method == 'POST':
         email=request.json["email"]
         password=request.json["password"]
-        cursor.execute("SELECT password from user WHERE email LIKE %s", (email,))#(('geudstu',),)
+        cursor.execute("SELECT password from user WHERE email LIKE %s", (email,))
         rv = cursor.fetchall()
         if len(rv)>0:
             t=str(rv).replace("(","")
